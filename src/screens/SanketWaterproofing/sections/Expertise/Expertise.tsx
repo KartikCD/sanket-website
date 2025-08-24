@@ -17,9 +17,58 @@ interface Description {
 
 interface ExpertiseDescription extends Description {
   importance: Array<Description>;
+  causes?: Array<string>;
 }
 
 export const expertiseDescription: Array<ExpertiseDescription> = [
+  {
+    id: 1,
+    title: "Terrace",
+    description: "Terrace waterproofing is critical for maintaining the structural integrity, safety, and longevity of a building.",
+    importance: [
+      {
+        id: 1,
+        title: "Prevents Structural Damage",
+        description: "Water seepage through the terrace can weaken concrete, corrode steel reinforcements, and cause cracks. Over time, this reduces the load-bearing capacity of the building."
+      },
+      {
+        id: 2,
+        title: "Avoids Leakage Issues",
+        description: "Without proper waterproofing, rainwater can leak into the ceiling and walls of top-floor rooms, causing stains, mold, and dripping. This leads to constant repair costs and inconvenience."
+      },
+      {
+        id: 3,
+        title: "Prevents Mold and Mildew",
+        description: "Damp areas encourage the growth of mold, algae, and mildew, which are not only unsightly but can also lead to respiratory problems and allergies."
+      },
+      {
+        id: 4,
+        title: "Increases Lifespan of the Building",
+        description: "Waterproofing protects materials from continuous water exposure, which prolongs the building's durability and lifespan."
+      },
+      {
+        id: 5,
+        title: "Enhances Energy Efficiency",
+        description: "Moisture in ceilings and walls can reduce insulation effectiveness. A dry terrace helps in maintaining consistent indoor temperature, lowering cooling and heating costs."
+      },
+      {
+        id: 6,
+        title: "Improves Property Value",
+        description: "A well-maintained, leak-proof terrace adds to the aesthetic and financial value of the property. Potential buyers or tenants consider waterproofing a major plus."
+      },
+      {
+        id: 7,
+        title: "Cost-Effective in the Long Run",
+        description: "Though the initial cost of waterproofing may seem high, it saves money over time by avoiding frequent repairs and interior damage."
+      }
+    ],
+    causes: [
+      "Poor slope design",
+      "Cracks in surface or joints",
+      "Clogged drainage systems",
+      "Substandard or no waterproofing during construction"
+    ]
+  },
   {
     id: 2,
     title: "Sunken Slab",
@@ -218,49 +267,49 @@ export const expertiseDescription: Array<ExpertiseDescription> = [
 ]
 
 const expertiseCards = [
-    {
-      id: 1,
-      title: "Terrace",
-      description:
-        "Comprehensive waterproofing solutions for terraces to prevent leakage and water damage.",
-      backgroundImage: ImageTerrace,
-    },
-    {
-      id: 2,
-      title: "Sunken Slab",
-      description:
-        "Sunken slab waterproofing is crucial in building construction, especially in wet areas like bathrooms, toilets, kitchens, and balconies. These slabs are deliberately lowered below the floor level to allow space for plumbing and drainage systems. Without proper waterproofing, sunken slabs can lead to serious structural and hygiene issues.",
-      backgroundImage: ImageSunkenLabs,
-    },
-    {
-      id: 3,
-      title: "Podium Slab",
-      description:
-        "Podium slab waterproofing is critically important in modern construction, especially in high-rise buildings, commercial complexes, and residential societies. The podium slab is typically located above the basement or lower floors and supports outdoor areas like gardens, parking zones, driveways, swimming pools, play areas, or even landscaped terraces.{'\n'}Because it sits above occupied or usable spaces, waterproofing a podium slab is non-negotiable to prevent major structural and functional problems",
-      backgroundImage: ImagePodiums,
-    },
-    {
-      id: 4,
-      title: "Dead Walls",
-      description:
-        "A dead wall is the external wall of a building that is usually not visible or has no openings (like windows/doors). It is often in direct contact with adjoining structures, soil, or exposed weather. Because it is not frequently accessed or noticed, its maintenance is often neglected.",
-      backgroundImage: ImageDeadWalls,
-    },
-    {
-      id: 5,
-      title: "Parapet Walls",
-      description:
-        "A parapet wall is the low protective wall along the edge of a terrace, balcony, or roof. Since it is directly exposed to rain, sun, and wind, it is one of the most vulnerable parts of a building to water damage.",
-      backgroundImage: ImageParapetWalls,
-    },
-    {
-      id: 6,
-      title: "Overhead Tanks",
-      description:
-        "An overhead tank is a water storage structure built on the terrace or rooftop of a building. Since it stores large volumes of water continuously, even the smallest crack or leakage can cause serious structural and health issues.",
-      backgroundImage: ImageOverheadTanks,
-    },
-  ];
+  {
+    id: 1,
+    title: "Terrace",
+    description:
+      "Terrace waterproofing is critical for maintaining the structural integrity, safety, and longevity of a building.",
+    backgroundImage: ImageTerrace,
+  },
+  {
+    id: 2,
+    title: "Sunken Slab",
+    description:
+      "Sunken slab waterproofing is crucial in building construction, especially in wet areas like bathrooms, toilets, kitchens, and balconies. These slabs are deliberately lowered below the floor level to allow space for plumbing and drainage systems. Without proper waterproofing, sunken slabs can lead to serious structural and hygiene issues.",
+    backgroundImage: ImageSunkenLabs,
+  },
+  {
+    id: 3,
+    title: "Podium Slab",
+    description:
+      "Podium slab waterproofing is critically important in modern construction, especially in high-rise buildings, commercial complexes, and residential societies. The podium slab is typically located above the basement or lower floors and supports outdoor areas like gardens, parking zones, driveways, swimming pools, play areas, or even landscaped terraces.{'\n'}Because it sits above occupied or usable spaces, waterproofing a podium slab is non-negotiable to prevent major structural and functional problems",
+    backgroundImage: ImagePodiums,
+  },
+  {
+    id: 4,
+    title: "Dead Walls",
+    description:
+      "A dead wall is the external wall of a building that is usually not visible or has no openings (like windows/doors). It is often in direct contact with adjoining structures, soil, or exposed weather. Because it is not frequently accessed or noticed, its maintenance is often neglected.",
+    backgroundImage: ImageDeadWalls,
+  },
+  {
+    id: 5,
+    title: "Parapet Walls",
+    description:
+      "A parapet wall is the low protective wall along the edge of a terrace, balcony, or roof. Since it is directly exposed to rain, sun, and wind, it is one of the most vulnerable parts of a building to water damage.",
+    backgroundImage: ImageParapetWalls,
+  },
+  {
+    id: 6,
+    title: "Overhead Tanks",
+    description:
+      "An overhead tank is a water storage structure built on the terrace or rooftop of a building. Since it stores large volumes of water continuously, even the smallest crack or leakage can cause serious structural and health issues.",
+    backgroundImage: ImageOverheadTanks,
+  },
+];
 
 export const Expertise = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -354,6 +403,25 @@ export const Expertise = (): JSX.Element => {
                 ))}
               </ul>
             </div>
+            {content.causes && (
+              <div>
+                <h4 className="font-semibold text-xl text-[#1c1c1c] font-['Poppins',Helvetica] mb-4 border-b border-gray-200 pb-2">
+                  Common causes of {content.title} Leakage?
+                </h4>
+                <ul className="space-y-2">
+                  {content.causes.map((desc, index) => (
+                    <li key={index} className="text-base text-[#4b4b4b] flex items-start">
+                      <span className="w-2 h-2 bg-[#f37021] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      {/* <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '8px' }}>
+                        <span style={{ fontWeight: 'bold' }}>{desc.title}</span>
+                        <span>{desc.description}</span>
+                      </div> */}
+                      {desc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </Modal>
       )}
