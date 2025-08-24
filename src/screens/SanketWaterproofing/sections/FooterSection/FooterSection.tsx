@@ -1,13 +1,13 @@
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import React from "react";
+import logo from "../../../../images/logo/ke-logo.png";
 
 export const FooterSection = (): JSX.Element => {
   // Company information
   const companyInfo = {
-    name: "AquaShield",
+    name: "Keshav Enterprises",
     description:
       "Professional waterproofing solutions for residential and commercial properties.",
-    socialIconsUrl: "/div.svg",
   };
 
   const isHomePage = !window.location.pathname.includes("/projects");
@@ -36,7 +36,7 @@ export const FooterSection = (): JSX.Element => {
   const contactInfo = {
     address: "123 Waterproof Avenue, Suite 400 Boston, MA 02110",
     phone: "+1 (555) 123-4567",
-    email: "info@aquashield.com",
+    email: "info@keshaventerprises.com",
   };
 
   return (
@@ -52,9 +52,9 @@ export const FooterSection = (): JSX.Element => {
               {companyInfo.description}
             </p>
             <img
-              className="w-full max-w-[284px] h-6 transition-all duration-300 hover:scale-105"
-              alt="Social media icons"
-              src={companyInfo.socialIconsUrl}
+              className="w-auto h-12 transition-all duration-300 hover:scale-105"
+              alt="Keshav Enterprises Logo"
+              src={logo}
             />
           </div>
 
@@ -127,7 +127,16 @@ export const FooterSection = (): JSX.Element => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-700 transition-all duration-300 hover:border-gray-600">
           <p className="text-center font-normal text-gray-300 text-base [font-family:'Poppins',Helvetica] leading-6 transition-colors duration-300 hover:text-white">
-            © {new Date().getFullYear()} AquaShield Waterproofing. All rights reserved.
+            © 2025 Keshav Enterprises Waterproofing. All rights reserved. Designed by{' '}
+            <a
+              href="https://kartikchawda.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[#f37021] transition-colors"
+            >
+              Kartik Chawda
+            </a>
+            .
           </p>
         </div>
       </div>

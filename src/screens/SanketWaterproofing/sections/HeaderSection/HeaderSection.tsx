@@ -7,6 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
+import logo from "../../../../images/logo/ke-logo.png";
 
 
 export const HeaderSection = (): JSX.Element => {
@@ -34,12 +35,9 @@ export const HeaderSection = (): JSX.Element => {
       <div className="container mx-auto h-full max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between h-full">
           {/* Logo and Brand Name */}
-          <div className="flex items-center gap-2 transform transition-transform duration-300 hover:scale-105">
-            <div className="relative w-[18px] h-6 bg-[url(/vector-14.svg)] bg-[100%_100%] animate-pulse" />
-            <div className="font-bold text-xl sm:text-2xl text-[#1c1c1c] font-['Poppins',Helvetica] leading-8 transition-colors duration-300 hover:text-[#f37021]">
-              AquaShield
-            </div>
-          </div>
+          <a href="/" className="flex items-center gap-2 transform transition-transform duration-300 hover:scale-105">
+            <img src={logo} alt="Keshav Enterprises Logo" className="h-10" />
+          </a>
 
           {/* Desktop Navigation Menu */}
           <div className="hidden lg:flex items-center gap-8">

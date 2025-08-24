@@ -9,8 +9,12 @@ import { HeaderSection } from "./sections/HeaderSection";
 import { Banner } from "./sections/Banner";
 import { Technologies } from "./sections/Technologies";
 import { WhyChooseUs } from "./sections/WhyChooseUs";
+import { useScrollToHash } from "../../hooks/useScrollToHash";
+import { StickySocials } from "../../components/StickySocials/StickySocials";
 
 export const SanketWaterproofing = (): JSX.Element => {
+  useScrollToHash();
+
   const pageUrl = "https://www.keshaventerprises.com/";
   const title = "Keshav Enterprises - Premier Waterproofing & Structural Repair Services";
   const description = "Keshav Enterprises offers expert waterproofing, structural repair, and rehabilitation services. We provide durable, long-lasting solutions for residential, commercial, and industrial projects.";
@@ -35,6 +39,7 @@ export const SanketWaterproofing = (): JSX.Element => {
         <meta name="twitter:image" content={imageUrl} />
       </Helmet>
       <div className="flex flex-col w-full bg-white border-2 border-solid border-[#ced4da]">
+        <StickySocials />
         <div className="w-full">
           <HeaderSection/>
           <Technologies />
