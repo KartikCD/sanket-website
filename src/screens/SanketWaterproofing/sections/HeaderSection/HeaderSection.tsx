@@ -16,9 +16,9 @@ export const HeaderSection = (): JSX.Element => {
 
   // Navigation menu items data
   const navItems = [
+    { label: "Technology", href: isHomePage ? "#technology" : "/#technology" },
     { label: "Services", href: isHomePage ? "#services" : "/#services" },
     { label: "About", href: isHomePage ? "#about-us" : "/#about-us" },
-    { label: "Technology", href: isHomePage ? "#technology" : "/#technology" },
     { label: "Clients", href: isHomePage ? "#clients" : "/#clients" },
     { label: "Projects", href: "/projects" },
     { label: "Contact", href: isHomePage ? "#contact-us" : "/#contact-us" },

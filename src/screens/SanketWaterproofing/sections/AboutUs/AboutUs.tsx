@@ -11,7 +11,7 @@ export const AboutUs = (): JSX.Element => {
   const aboutUsParagraphs = [
     "At Keshav Enterprises, we have been delivering reliable waterproofing solutions for over 7 years. As a CIDC-certified company, we strictly adhere to all standard codes and best practices, ensuring quality and safety in every project we undertake.",
     "Our expertise lies in identifying the root cause of leakage and seepage problems and providing effective solutions without causing damage to your structure. We believe in using eco-friendly products and adopting sustainable practices that protect both your building and the environment.",
-    "",
+    "With a dedicated team of qualified engineers and skilled technicians, we are equipped to execute waterproofing works both internally and externally, using the latest technologies. Our commitment is to deliver long-lasting, efficient, and hassle-free waterproofing services that give our clients complete peace of mind.",
   ];
 
   const openModal = () => setIsModalOpen(true);

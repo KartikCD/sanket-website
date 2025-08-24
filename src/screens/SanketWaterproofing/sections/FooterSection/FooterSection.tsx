@@ -14,9 +14,9 @@ export const FooterSection = (): JSX.Element => {
 
   // Quick links data
   const quickLinks = [
+    { title: "Technology", href: isHomePage ? "#technology" : "/#technology" },
     { title: "Services", href: isHomePage ? "#services" : "/#services" },
     { title: "About Us", href: isHomePage ? "#about-us" : "/#about-us" },
-    { title: "Technology", href: isHomePage ? "#technology" : "/#technology" },
     { title: "Clients", href: isHomePage ? "#clients" : "/#clients" },
     { title: "Projects", href: isHomePage ? "/projects" : "/projects" },
     { title: "Contact", href: isHomePage ? "#contact-us" : "/#contact-us" },

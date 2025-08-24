@@ -37,13 +37,13 @@ export const SanketWaterproofing = (): JSX.Element => {
       <div className="flex flex-col w-full bg-white border-2 border-solid border-[#ced4da]">
         <div className="w-full">
           <HeaderSection/>
-          <Banner/>
-          <Clients />
-          <Expertise />
           <Technologies />
+          <Expertise />
           <AboutUs />
+          <Clients />
           <WhyChooseUs />
           <ContactUs />
+          {/* <Banner/> */}
           <FooterSection />
         </div>
       </div>
