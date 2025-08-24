@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-import ImageTerrace from '../../../../images/expertise/terrace.svg';
-import ImageDeadWalls from '../../../../images/expertise/dead-walls.svg';
-import ImageParapetWalls from '../../../../images/expertise/parapet-walls.svg';
-import ImagePodiums from '../../../../images/expertise/podiums.svg';
-import ImageSunkenLabs from '../../../../images/expertise/sunken-labs.svg';
+import ImageTerrace from '../../../../images/expertise/terrace.png';
+import ImageDeadWalls from '../../../../images/expertise/dead-walls.png';
+import ImageParapetWalls from '../../../../images/expertise/parapet-walls.png';
+import ImagePodiums from '../../../../images/expertise/podiums.png';
+import ImageSunkenLabs from '../../../../images/expertise/sunken-labs.png';
 import ImageOverheadTanks from '../../../../images/expertise/overheadtanks.png';
 import { Modal } from "../../../../components/ui/modal";
 
