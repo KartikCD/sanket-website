@@ -182,6 +182,7 @@ export const ContactUs = (): JSX.Element => {
                   <Input
                     id="name"
                     type="text"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     className="h-[42px] bg-white border border-solid focus:border-[#f37021] focus:ring-2 focus:ring-[#f37021]/20"
@@ -199,6 +200,7 @@ export const ContactUs = (): JSX.Element => {
                   <Input
                     id="email"
                     type="email"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
                     className="h-[42px] bg-white border border-solid focus:border-[#f37021] focus:ring-2 focus:ring-[#f37021]/20"
@@ -216,6 +218,7 @@ export const ContactUs = (): JSX.Element => {
                   <Input
                     id="phone"
                     type="tel"
+                    autoComplete="tel"
                     value={formData.phone}
                     onChange={handleChange}
                     className="h-[42px] bg-white border border-solid focus:border-[#f37021] focus:ring-2 focus:ring-[#f37021]/20"
