@@ -34,9 +34,9 @@ export const FooterSection = (): JSX.Element => {
 
   // Contact information
   const contactInfo = {
-    address: "123 Waterproof Avenue, Suite 400 Boston, MA 02110",
-    phone: "+1 (555) 123-4567",
-    email: "info@keshaventerprises.com",
+    address: "606, Bldg No 6, Satara CHS, Opposite ATI, Sion Chunabhatti, Mumbai - 400022",
+    phone: "+91 87794 96622",
+    email: "contact@kewaterproofing.com",
   };
 
   return (
@@ -55,6 +55,7 @@ export const FooterSection = (): JSX.Element => {
               className="w-auto h-12 transition-all duration-300 hover:scale-105"
               alt="Keshav Enterprises Logo"
               src={logo}
+              style={{ objectFit: 'contain', alignSelf: 'flex-start' }}
             />
           </div>
 
@@ -127,7 +128,7 @@ export const FooterSection = (): JSX.Element => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-700 transition-all duration-300 hover:border-gray-600">
           <p className="text-center font-normal text-gray-300 text-base [font-family:'Poppins',Helvetica] leading-6 transition-colors duration-300 hover:text-white">
-            © 2025 Keshav Enterprises Waterproofing. All rights reserved. Designed by{' '}
+            © {new Date().getFullYear()} Keshav Enterprises. All rights reserved. Designed by{' '}
             <a
               href="https://kartikchawda.com"
               target="_blank"

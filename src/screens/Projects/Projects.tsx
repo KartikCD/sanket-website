@@ -5,12 +5,14 @@ import { Card, CardContent } from "../../components/ui/card";
 import { Modal } from "../../components/ui/modal";
 import { HeaderSection } from "../SanketWaterproofing/sections/HeaderSection";
 import { FooterSection } from "../SanketWaterproofing/sections/FooterSection";
+import { projects } from "../../util/projects";
+import { useNavigate } from "react-router-dom";
 
 interface Project {
   id: number;
   title: string;
   location: string;
-  area: number;
+  area: string;
   duration: number;
   status: "completed" | "ongoing" | "upcoming";
   image: string;
@@ -28,112 +30,113 @@ interface Project {
 export const Projects = (): JSX.Element => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeTab, setActiveTab] = useState<"completed" | "ongoing" | "upcoming">("completed");
+  const navigate = useNavigate();
 
   // Sample project data
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "Luxury Residential Complex - Phase 1",
-      location: "Downtown Boston, MA",
-      area: 15000,
-      duration: 45,
-      status: "completed",
-      image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400",
-      description: "Complete waterproofing solution for a 20-story luxury residential complex including terrace, basement, and exterior walls.",
-      clientReview: "Exceptional work quality and timely completion. The team was professional and the waterproofing has held up perfectly through multiple seasons.",
-      clientName: "John Mitchell",
-      rating: 5,
-      completionDate: "March 15, 2024",
-      projectType: "Residential Complex",
-      challenges: ["High-rise access", "Weather constraints", "Occupied building"],
-      solutions: ["Advanced scaffolding system", "Weather-resistant materials", "Phased execution plan"]
-    },
-    {
-      id: 2,
-      title: "Commercial Office Building",
-      location: "Cambridge, MA",
-      area: 8500,
-      duration: 30,
-      status: "completed",
-      image: "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=400",
-      description: "Comprehensive waterproofing for office building including parking garage and rooftop areas.",
-      clientReview: "Outstanding service and attention to detail. No leakage issues since completion and the warranty gives us peace of mind.",
-      clientName: "Sarah Johnson",
-      rating: 5,
-      completionDate: "January 20, 2024",
-      projectType: "Commercial Building",
-      challenges: ["Underground parking", "Business continuity", "Complex drainage"],
-      solutions: ["Non-disruptive techniques", "After-hours work schedule", "Advanced drainage system"]
-    },
-    {
-      id: 3,
-      title: "Industrial Warehouse Complex",
-      location: "Quincy, MA",
-      area: 25000,
-      duration: 60,
-      status: "ongoing",
-      image: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400",
-      description: "Large-scale waterproofing project for industrial warehouse including loading docks and storage areas.",
-      clientReview: "Work in progress but very impressed with the professionalism and quality so far. Team is always on schedule.",
-      clientName: "Mike Rodriguez",
-      rating: 5,
-      startDate: "February 1, 2024",
-      projectType: "Industrial Complex",
-      challenges: ["Large scale operations", "Heavy machinery access", "Continuous operations"],
-      solutions: ["Sectional approach", "Specialized equipment", "24/7 coordination"]
-    },
-    {
-      id: 4,
-      title: "Hospital Medical Center",
-      location: "Newton, MA",
-      area: 12000,
-      duration: 40,
-      status: "ongoing",
-      image: "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400",
-      description: "Critical waterproofing for medical facility including operating rooms and patient areas.",
-      clientReview: "Extremely careful and professional approach. Understanding of hospital requirements is excellent.",
-      clientName: "Dr. Emily Chen",
-      rating: 5,
-      startDate: "March 10, 2024",
-      projectType: "Healthcare Facility",
-      challenges: ["Sterile environment", "Critical operations", "Strict regulations"],
-      solutions: ["Medical-grade materials", "Infection control protocols", "Minimal disruption methods"]
-    },
-    {
-      id: 5,
-      title: "Shopping Mall Renovation",
-      location: "Brookline, MA",
-      area: 18000,
-      duration: 50,
-      status: "upcoming",
-      image: "https://images.pexels.com/photos/264507/pexels-photo-264507.jpeg?auto=compress&cs=tinysrgb&w=400",
-      description: "Complete waterproofing renovation for shopping mall including food court and retail spaces.",
-      clientReview: "Looking forward to working with AquaShield based on their excellent reputation and detailed proposal.",
-      clientName: "Robert Kim",
-      rating: 0,
-      startDate: "June 1, 2024",
-      projectType: "Retail Complex",
-      challenges: ["Public access", "Multiple tenants", "Aesthetic requirements"],
-      solutions: ["Phased execution", "Tenant coordination", "Decorative finishes"]
-    },
-    {
-      id: 6,
-      title: "University Campus Buildings",
-      location: "Cambridge, MA",
-      area: 22000,
-      duration: 70,
-      status: "upcoming",
-      image: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=400",
-      description: "Waterproofing solution for multiple university buildings including dormitories and academic facilities.",
-      clientReview: "Excited to begin this project. The planning phase has been thorough and professional.",
-      clientName: "Prof. David Wilson",
-      rating: 0,
-      startDate: "August 15, 2024",
-      projectType: "Educational Facility",
-      challenges: ["Multiple buildings", "Student housing", "Academic schedule"],
-      solutions: ["Summer execution", "Building-by-building approach", "Student safety protocols"]
-    }
-  ];
+  // const projects: Project[] = [
+  //   {
+  //     id: 1,
+  //     title: "Mount Mary Church",
+  //     location: "Bandra Bandstand, Mumbai",
+  //     area: "10000+",
+  //     duration: 3,
+  //     status: "completed",
+  //     image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     description: "Complete waterproofing solution for a 20-story luxury residential complex including terrace, basement, and exterior walls.",
+  //     clientReview: "Exceptional work quality and timely completion. The team was professional and the waterproofing has held up perfectly through multiple seasons.",
+  //     clientName: "John Mitchell",
+  //     rating: 5,
+  //     completionDate: "March 15, 2024",
+  //     projectType: "Residential Complex",
+  //     challenges: ["High-rise access", "Weather constraints", "Occupied building"],
+  //     solutions: ["Advanced scaffolding system", "Weather-resistant materials", "Phased execution plan"]
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Commercial Office Building",
+  //     location: "Cambridge, MA",
+  //     area: 8500,
+  //     duration: 30,
+  //     status: "completed",
+  //     image: "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     description: "Comprehensive waterproofing for office building including parking garage and rooftop areas.",
+  //     clientReview: "Outstanding service and attention to detail. No leakage issues since completion and the warranty gives us peace of mind.",
+  //     clientName: "Sarah Johnson",
+  //     rating: 5,
+  //     completionDate: "January 20, 2024",
+  //     projectType: "Commercial Building",
+  //     challenges: ["Underground parking", "Business continuity", "Complex drainage"],
+  //     solutions: ["Non-disruptive techniques", "After-hours work schedule", "Advanced drainage system"]
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Industrial Warehouse Complex",
+  //     location: "Quincy, MA",
+  //     area: 25000,
+  //     duration: 60,
+  //     status: "ongoing",
+  //     image: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     description: "Large-scale waterproofing project for industrial warehouse including loading docks and storage areas.",
+  //     clientReview: "Work in progress but very impressed with the professionalism and quality so far. Team is always on schedule.",
+  //     clientName: "Mike Rodriguez",
+  //     rating: 5,
+  //     startDate: "February 1, 2024",
+  //     projectType: "Industrial Complex",
+  //     challenges: ["Large scale operations", "Heavy machinery access", "Continuous operations"],
+  //     solutions: ["Sectional approach", "Specialized equipment", "24/7 coordination"]
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Hospital Medical Center",
+  //     location: "Newton, MA",
+  //     area: 12000,
+  //     duration: 40,
+  //     status: "ongoing",
+  //     image: "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     description: "Critical waterproofing for medical facility including operating rooms and patient areas.",
+  //     clientReview: "Extremely careful and professional approach. Understanding of hospital requirements is excellent.",
+  //     clientName: "Dr. Emily Chen",
+  //     rating: 5,
+  //     startDate: "March 10, 2024",
+  //     projectType: "Healthcare Facility",
+  //     challenges: ["Sterile environment", "Critical operations", "Strict regulations"],
+  //     solutions: ["Medical-grade materials", "Infection control protocols", "Minimal disruption methods"]
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Shopping Mall Renovation",
+  //     location: "Brookline, MA",
+  //     area: 18000,
+  //     duration: 50,
+  //     status: "upcoming",
+  //     image: "https://images.pexels.com/photos/264507/pexels-photo-264507.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     description: "Complete waterproofing renovation for shopping mall including food court and retail spaces.",
+  //     clientReview: "Looking forward to working with AquaShield based on their excellent reputation and detailed proposal.",
+  //     clientName: "Robert Kim",
+  //     rating: 0,
+  //     startDate: "June 1, 2024",
+  //     projectType: "Retail Complex",
+  //     challenges: ["Public access", "Multiple tenants", "Aesthetic requirements"],
+  //     solutions: ["Phased execution", "Tenant coordination", "Decorative finishes"]
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "University Campus Buildings",
+  //     location: "Cambridge, MA",
+  //     area: 22000,
+  //     duration: 70,
+  //     status: "upcoming",
+  //     image: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     description: "Waterproofing solution for multiple university buildings including dormitories and academic facilities.",
+  //     clientReview: "Excited to begin this project. The planning phase has been thorough and professional.",
+  //     clientName: "Prof. David Wilson",
+  //     rating: 0,
+  //     startDate: "August 15, 2024",
+  //     projectType: "Educational Facility",
+  //     challenges: ["Multiple buildings", "Student housing", "Academic schedule"],
+  //     solutions: ["Summer execution", "Building-by-building approach", "Student safety protocols"]
+  //   }
+  // ];
 
   const filteredProjects = projects.filter(project => project.status === activeTab);
 
@@ -180,7 +183,7 @@ export const Projects = (): JSX.Element => {
           {/* Back Button */}
           <div className="mb-12">
             <Button
-              onClick={() => window.history.back()}
+              onClick={() => navigate("/")}
               variant="outline"
               className="flex items-center gap-2 hover:bg-[#f37021] hover:text-white hover:border-[#f37021] transition-all duration-300"
             >

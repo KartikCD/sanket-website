@@ -3,6 +3,7 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { Modal } from "../../../../components/ui/modal";
 
 import ImageCertification from '../../../../images/certificate/sanket-manerikar.jpg';
+import { Button } from "../../../../components/ui/button";
 
 export const AboutUs = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,6 +37,14 @@ export const AboutUs = (): JSX.Element => {
                   {paragraph}
                 </p>
               ))}
+              <div style={{ display: 'flex', flexDirection: 'row', gap: '32px' }}>
+                {/* <Button className="bg-[#f37021] hover:bg-[#e06418] text-white font-bold font-['Poppins',Helvetica] px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                  See Portfolio
+                </Button> */}
+                <Button onClick={() => document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" })} className="bg-[#f37021] hover:bg-[#e06418] text-white font-bold font-['Poppins',Helvetica] px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                  Get Quote
+                </Button>
+              </div>
             </div>
           </div>
 

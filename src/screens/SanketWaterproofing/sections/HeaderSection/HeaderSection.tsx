@@ -8,12 +8,15 @@ import {
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
 import logo from "../../../../images/logo/ke-logo.png";
+import { useNavigate } from "react-router-dom";
 
 
 export const HeaderSection = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isHomePage = !window.location.pathname.includes("/projects");
+  
+  const navigate = useNavigate();
 
   // Navigation menu items data
   const navItems = [
@@ -57,7 +60,15 @@ export const HeaderSection = (): JSX.Element => {
             </NavigationMenu>
             
             {/* Get Quote Button */}
-            <Button onClick={() => document.getElementById("get-quote")?.scrollIntoView({ behavior: "smooth" })} className="bg-[#f37021] hover:bg-[#e06418] text-white font-bold font-['Poppins',Helvetica] px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+            <Button 
+              onClick={() => {
+                if (isHomePage) {
+                  document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  navigate("/#contact-us");
+                }
+              }} 
+              className="bg-[#f37021] hover:bg-[#e06418] text-white font-bold font-['Poppins',Helvetica] px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
               Get Quote
             </Button>
           </div>
@@ -98,7 +109,11 @@ export const HeaderSection = (): JSX.Element => {
             <Button 
               className="w-full bg-[#f37021] hover:bg-[#e06418] text-white font-bold font-['Poppins',Helvetica] py-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg mt-4"
               onClick={() => {
-                document.getElementById("get-quote")?.scrollIntoView({ behavior: "smooth" });
+                if (isHomePage) {
+                  document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  navigate("/#contact-us");
+                }
                 setIsMobileMenuOpen(false)
               }}
             >

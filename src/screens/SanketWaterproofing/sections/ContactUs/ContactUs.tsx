@@ -93,9 +93,21 @@ export const ContactUs = (): JSX.Element => {
     scriptFormData.append("Time", time);
 
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      const response = await fetch("", {
         method: "POST",
-        body: scriptFormData,
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          city: formData.city,
+          date: date,
+          time: time,
+        }),
       });
 
       if (response.ok) {
@@ -126,17 +138,17 @@ export const ContactUs = (): JSX.Element => {
     {
       icon: <MailIcon className="h-4 w-4 text-white" />,
       title: "Email",
-      value: "info@aquashield.com",
+      value: "contact@kewaterproofing.com",
     },
     {
       icon: <PhoneIcon className="h-4 w-4 text-white" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91 87794 96622",
     },
     {
       icon: <MapPinIcon className="h-4 w-4 text-white" />,
       title: "Address",
-      value: "123 Waterproof Avenue, Suite 400 Boston, MA 02110",
+      value: "606, Bldg No 6, Satara CHS, Opposite ATI, Sion Chunabhatti, Mumbai - 400022",
     },
   ];
 
@@ -148,8 +160,7 @@ export const ContactUs = (): JSX.Element => {
             Get in Touch
           </h2>
           <p className="font-normal text-base text-[#4b4b4b] font-['Poppins',Helvetica] max-w-[704px] mx-auto">
-            Have questions about our waterproofing solutions? Contact us today
-            for a consultation.
+            Whether you have questions about waterproofing or are ready to get the job done, we’re here to help—contact us today for a consultation.
           </p>
         </div>
 
@@ -281,7 +292,7 @@ export const ContactUs = (): JSX.Element => {
               {/* Map placeholder */}
               <div className="mt-8 w-full h-[260px] rounded-lg bg-gray-200 flex items-center justify-center">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1625257597525!2d72.8952201754462!3d19.056590552581085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c913e90c8ea3%3A0xf0303e34efa378dc!2sThird%20Wave%20Coffee!5e0!3m2!1sen!2sin!4v1753568580768!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.8060587178471!2d72.87906536383095!3d19.053082965939847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8b9987bd6af%3A0xf54753cc38673103!2sSatara%20CHSL!5e0!3m2!1sen!2sin!4v1756162012789!5m2!1sen!2sin"
                   height="260"
                   width="100%"
                   style={{ border: 0 }}
