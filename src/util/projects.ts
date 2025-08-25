@@ -374,4 +374,4 @@ export const projects: Array<Project> = [
         challenges: ["High-rise access", "Weather constraints", "Occupied building"],
         solutions: []
     }
-] 
+]

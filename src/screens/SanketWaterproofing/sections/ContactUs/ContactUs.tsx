@@ -139,16 +139,19 @@ export const ContactUs = (): JSX.Element => {
       icon: <MailIcon className="h-4 w-4 text-white" />,
       title: "Email",
       value: "contact@kewaterproofing.com",
+      href: "mailto:contact@kewaterproofing.com",
     },
     {
       icon: <PhoneIcon className="h-4 w-4 text-white" />,
       title: "Phone",
       value: "+91 87794 96622",
+      href: "tel:+918779496622",
     },
     {
       icon: <MapPinIcon className="h-4 w-4 text-white" />,
       title: "Address",
       value: "606, Bldg No 6, Satara CHS, Opposite ATI, Sion Chunabhatti, Mumbai - 400022",
+      href: null,
     },
   ];
 
@@ -281,9 +284,15 @@ export const ContactUs = (): JSX.Element => {
                       <h4 className="font-medium text-base text-[#1c1c1c] font-['Poppins',Helvetica]">
                         {item.title}
                       </h4>
-                      <p className="font-normal text-base text-[#4b4b4b] font-['Poppins',Helvetica]">
-                        {item.value}
-                      </p>
+                      <div className="font-normal text-base text-[#4b4b4b] font-['Poppins',Helvetica]">
+                        {item.href ? (
+                          <a href={item.href} className="hover:text-[#f37021] transition-colors duration-300 hover:underline">
+                            {item.value}
+                          </a>
+                        ) : (
+                          <span>{item.value}</span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}

@@ -109,18 +109,18 @@ export const FooterSection = (): JSX.Element => {
                   {contactInfo.address}
                 </p>
               </div>
-              <div className="flex items-center group transition-all duration-300 hover:translate-x-2">
+              <a href={`tel:${contactInfo.phone.replace(/\s/g, '')}`} className="flex items-center group transition-all duration-300 hover:translate-x-2">
                 <PhoneIcon className="w-4 h-4 text-white flex-shrink-0 transition-colors duration-300 group-hover:text-[#f37021]" />
                 <p className="ml-2 text-white font-normal text-base [font-family:'Poppins',Helvetica] leading-6 transition-colors duration-300 group-hover:text-gray-300">
                   {contactInfo.phone}
                 </p>
-              </div>
-              <div className="flex items-center group transition-all duration-300 hover:translate-x-2">
+              </a>
+              <a href={`mailto:${contactInfo.email}`} className="flex items-center group transition-all duration-300 hover:translate-x-2">
                 <MailIcon className="w-4 h-4 text-white flex-shrink-0 transition-colors duration-300 group-hover:text-[#f37021]" />
                 <p className="ml-2 text-white font-normal text-base [font-family:'Poppins',Helvetica] leading-6 transition-colors duration-300 group-hover:text-gray-300">
                   {contactInfo.email}
                 </p>
-              </div>
+              </a>
             </div>
           </div>
         </div>
