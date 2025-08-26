@@ -93,7 +93,7 @@ export const ContactUs = (): JSX.Element => {
     scriptFormData.append("Time", time);
 
     try {
-      const response = await fetch("", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyDD4voqdAPYow73hHrhY1xdiNADUjv8c13esCe7IByiyYp5_L3V6A8WXTonn5uCfiU/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {

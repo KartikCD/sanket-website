@@ -19,7 +19,7 @@ const WhatsappIcon = ({ className }: { className?: string }) => (
 
 const socialLinks = [
   {
-    href: 'https://www.instagram.com/',
+    href: 'https://www.instagram.com/constructionandwaterpoofing?igsh=b2JrM21obTEyeXF0/',
     icon: <Instagram className="h-6 w-6" />,
     label: 'Instagram',
     hoverBg: 'hover:bg-pink-600',

@@ -13,6 +13,9 @@ import InfinityTower from '../images/projects/infinity-tower.webp';
 import IslandTower from '../images/projects/island-tower.jpg';
 import JswDolvi from '../images/projects/jsw-dolvi.jpeg';
 import GingerHotel from '../images/projects/ginger.jpg';
+import SankeshGroup from '../images/projects/sankesh-grpu.jpeg';
+import SkylineGroup from '../images/projects/skyline-group.png';
+import KhushiFarms from '../images/projects/khushi-farms.jpeg';
 
 export interface Project {
     id: number;
@@ -31,6 +34,7 @@ export interface Project {
     projectType: string;
     challenges: string[];
     solutions: string[];
+    bgColor?: string;
 }
 
 export const projects: Array<Project> = [
@@ -50,6 +54,24 @@ export const projects: Array<Project> = [
         projectType: "Residential Complex",
         challenges: ["High-rise access", "Weather constraints", "Occupied building"],
         solutions: ["Advanced scaffolding system", "Weather-resistant materials", "Phased execution plan"]
+    },
+    {
+        id: 21,
+        title: "Sky Line Changers Industrial",
+        location: "Vapi, Mumbai",
+        area: "2,30,000+",
+        duration: 15,
+        status: "completed",
+        image: SkylineGroup,
+        description: "",
+        clientReview: "Exceptional work quality and timely completion. The team was professional and the waterproofing has held up perfectly through multiple seasons.",
+        clientName: "John Mitchell",
+        rating: 5,
+        completionDate: "March 15, 2024",
+        projectType: "Residential Complex",
+        challenges: ["High-rise access", "Weather constraints", "Occupied building"],
+        solutions: ["Advanced scaffolding system", "Weather-resistant materials", "Phased execution plan"],
+        bgColor: '#000'
     },
     {
         id: 2,
@@ -273,6 +295,24 @@ export const projects: Array<Project> = [
         solutions: ["Advanced scaffolding system", "Weather-resistant materials", "Phased execution plan"]
     },
     {
+        id: 22,
+        title: "Sky Line Changers Industrial",
+        location: "Vapi, Gujarat",
+        area: "2,00,000+",
+        duration: 15,
+        status: "ongoing",
+        image: SkylineGroup,
+        description: "",
+        clientReview: "Exceptional work quality and timely completion. The team was professional and the waterproofing has held up perfectly through multiple seasons.",
+        clientName: "John Mitchell",
+        rating: 5,
+        completionDate: "March 15, 2024",
+        projectType: "Residential Complex",
+        challenges: ["High-rise access", "Weather constraints", "Occupied building"],
+        solutions: [],
+        bgColor: '#000'
+    },
+    {
         id: 15,
         title: "JSW Dolvi",
         location: "Dolvi, Alibaug, Maharashtra",
@@ -364,7 +404,24 @@ export const projects: Array<Project> = [
         area: "3,000+",
         duration: 3,
         status: "ongoing",
-        image: AtharvaChandramilan,
+        image: SankeshGroup,
+        description: "",
+        clientReview: "Exceptional work quality and timely completion. The team was professional and the waterproofing has held up perfectly through multiple seasons.",
+        clientName: "John Mitchell",
+        rating: 5,
+        completionDate: "March 15, 2024",
+        projectType: "Residential Complex",
+        challenges: ["High-rise access", "Weather constraints", "Occupied building"],
+        solutions: []
+    },
+    {
+        id: 23,
+        title: "Khushi Farms and Stays",
+        location: "Khopoli, Maharashtra",
+        area: "4,000+",
+        duration: 3,
+        status: "ongoing",
+        image: KhushiFarms,
         description: "",
         clientReview: "Exceptional work quality and timely completion. The team was professional and the waterproofing has held up perfectly through multiple seasons.",
         clientName: "John Mitchell",

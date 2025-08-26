@@ -25,6 +25,7 @@ interface Project {
   projectType: string;
   challenges: string[];
   solutions: string[];
+  bgColor?: string;
 }
 
 export const Projects = (): JSX.Element => {
@@ -125,13 +126,14 @@ export const Projects = (): JSX.Element => {
               <Card
                 key={project.id}
                 className="overflow-hidden rounded-lg shadow-[0px_4px_6px_#0000001a,0px_2px_4px_#0000001a] bg-white transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer group"
-                onClick={() => openProjectModal(project)}
+                // onClick={() => openProjectModal(project)}
               >
                 <div className="relative">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-all duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: project.bgColor || "" }}
+                    className={`w-full h-48 object-cover transition-all duration-300 group-hover:scale-110`}
                   />
                   <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
                     {getStatusText(project.status)}
