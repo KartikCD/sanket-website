@@ -2,7 +2,7 @@ import ReactGA from "react-ga4";
 import ReactPixel from 'react-facebook-pixel';
 
 // CRITICAL: Replace these placeholder IDs with your actual tracking IDs.
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; 
+const GA_MEASUREMENT_ID = "G-DH21554N7V"; 
 const META_PIXEL_ID = "0000000000000";
 
 let isInitialized = false;
