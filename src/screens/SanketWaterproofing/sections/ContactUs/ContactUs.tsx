@@ -93,7 +93,7 @@ export const ContactUs = (): JSX.Element => {
     scriptFormData.append("Time", time);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyDD4voqdAPYow73hHrhY1xdiNADUjv8c13esCe7IByiyYp5_L3V6A8WXTonn5uCfiU/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbw7yI9BX2RWGHr81LHN-6Hu28dSDXdRuliN23LLFSOMv6E-PtTAtxTlaE41CIQM2irS/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -110,7 +110,6 @@ export const ContactUs = (): JSX.Element => {
         }),
       });
 
-      if (response.ok) {
         alert("Thank you for your message! We'll get back to you soon.");
         setFormData({
           name: "",
@@ -120,9 +119,6 @@ export const ContactUs = (): JSX.Element => {
           message: "",
         });
         setErrors({});
-      } else {
-        throw new Error("Network response was not ok.");
-      }
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(
