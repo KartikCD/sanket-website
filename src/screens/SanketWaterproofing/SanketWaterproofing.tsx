@@ -6,14 +6,22 @@ import { ContactUs } from "./sections/ContactUs";
 import { Expertise } from "./sections/Expertise";
 import { FooterSection } from "./sections/FooterSection";
 import { HeaderSection } from "./sections/HeaderSection";
-import { Banner } from "./sections/Banner";
 import { Technologies } from "./sections/Technologies";
 import { WhyChooseUs } from "./sections/WhyChooseUs";
 import { useScrollToHash } from "../../hooks/useScrollToHash";
 import { StickySocials } from "../../components/StickySocials/StickySocials";
+import { useSectionTracking } from "../../hooks/useSectionTracking";
 
 export const SanketWaterproofing = (): JSX.Element => {
   useScrollToHash();
+
+  // Create refs for each section to track visibility on scroll
+  const technologiesRef = useSectionTracking('Technologies');
+  const expertiseRef = useSectionTracking('Expertise');
+  const aboutUsRef = useSectionTracking('About Us');
+  const clientsRef = useSectionTracking('Clients');
+  const whyChooseUsRef = useSectionTracking('Why Choose Us');
+  const contactUsRef = useSectionTracking('Contact Us');
 
   const pageUrl = "https://www.keshaventerprises.com/";
   const title = "Keshav Enterprises - Premier Waterproofing & Structural Repair Services";
@@ -26,29 +34,27 @@ export const SanketWaterproofing = (): JSX.Element => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={pageUrl} />
-        {/* Open Graph Tags */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:type" content="website" />
-        {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={imageUrl} />
       </Helmet>
       <div className="flex flex-col w-full bg-white border-2 border-solid border-[#ced4da]">
-        <StickySocials />
+        {/* Note: StickySocials component will need tracking added internally */}
         <div className="w-full">
           <HeaderSection/>
-          <Technologies />
-          <Expertise />
-          <AboutUs />
-          <Clients />
-          <WhyChooseUs />
-          <ContactUs />
-          {/* <Banner/> */}
+          {/* Attach refs to section wrapper divs for scroll tracking */}
+          <div ref={technologiesRef}><Technologies /></div>
+          <div ref={expertiseRef}><Expertise /></div>
+          <div ref={aboutUsRef}><AboutUs /></div>
+          <div ref={clientsRef}><Clients /></div>
+          <div ref={whyChooseUsRef}><WhyChooseUs /></div>
+          <div ref={contactUsRef}><ContactUs /></div>
           <FooterSection />
         </div>
       </div>

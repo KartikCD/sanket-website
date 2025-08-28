@@ -9,6 +9,7 @@ import {
 } from "../../../../components/ui/navigation-menu";
 import logo from "../../../../images/logo/ke-logo.png";
 import { useNavigate } from "react-router-dom";
+import { trackEvent } from "../../../../analytics";
 
 
 export const HeaderSection = (): JSX.Element => {
@@ -18,7 +19,6 @@ export const HeaderSection = (): JSX.Element => {
   
   const navigate = useNavigate();
 
-  // Navigation menu items data
   const navItems = [
     { label: "Technology", href: isHomePage ? "#technology" : "/#technology" },
     { label: "Services", href: isHomePage ? "#services" : "/#services" },
@@ -37,12 +37,10 @@ export const HeaderSection = (): JSX.Element => {
     <header className="w-full h-16 bg-white shadow-md sticky top-0 z-50 transition-all duration-300 ease-in-out">
       <div className="container mx-auto h-full max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between h-full">
-          {/* Logo and Brand Name */}
-          <a href="/" className="flex items-center gap-2 transform transition-transform duration-300 hover:scale-105">
+          <a href="/" className="flex items-center gap-2 transform transition-transform duration-300 hover:scale-105" onClick={() => trackEvent('Navigation', 'Header Click', 'Logo')}>
             <img src={logo} alt="Keshav Enterprises Logo" className="h-10" />
           </a>
 
-          {/* Desktop Navigation Menu */}
           <div className="hidden lg:flex items-center gap-8">
             <NavigationMenu>
               <NavigationMenuList className="flex gap-8">
@@ -50,6 +48,7 @@ export const HeaderSection = (): JSX.Element => {
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       href={item.href}
+                      onClick={() => trackEvent('Navigation', 'Header Click', item.label)}
                       className="font-['Poppins',Helvetica] font-normal text-[#1c1c1c] text-base leading-6 transition-all duration-300 hover:text-[#f37021] hover:scale-105 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#f37021] after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
                     >
                       {item.label}
@@ -59,9 +58,9 @@ export const HeaderSection = (): JSX.Element => {
               </NavigationMenuList>
             </NavigationMenu>
             
-            {/* Get Quote Button */}
             <Button 
               onClick={() => {
+                trackEvent('Button', 'Header Click', 'Get Quote');
                 if (isHomePage) {
                   document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
                 } else {
@@ -73,7 +72,6 @@ export const HeaderSection = (): JSX.Element => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
             className="lg:hidden p-2 rounded-md transition-all duration-300 hover:bg-gray-100 transform hover:scale-110"
@@ -87,7 +85,6 @@ export const HeaderSection = (): JSX.Element => {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
         <div
           className={`lg:hidden absolute top-16 left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out transform ${
             isMobileMenuOpen
@@ -101,7 +98,10 @@ export const HeaderSection = (): JSX.Element => {
                 key={index}
                 href={item.href}
                 className="block font-['Poppins',Helvetica] font-normal text-[#1c1c1c] text-base leading-6 py-2 px-4 rounded-lg transition-all duration-300 hover:bg-gray-100 hover:text-[#f37021] transform hover:translate-x-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  trackEvent('Navigation', 'Mobile Header Click', item.label);
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 {item.label}
               </a>
@@ -109,6 +109,7 @@ export const HeaderSection = (): JSX.Element => {
             <Button 
               className="w-full bg-[#f37021] hover:bg-[#e06418] text-white font-bold font-['Poppins',Helvetica] py-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg mt-4"
               onClick={() => {
+                trackEvent('Button', 'Mobile Header Click', 'Get Quote');
                 if (isHomePage) {
                   document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
                 } else {

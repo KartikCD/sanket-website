@@ -2,14 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import { App } from "./App";
+import { initAnalytics } from "./analytics";
 
-const rootElement = document.getElementById("app");
-if (!rootElement) {
-  throw new Error("Failed to find the root element");
-}
+// Initialize analytics services on application startup
+initAnalytics();
 
-const root = ReactDOM.createRoot(rootElement);
-
+const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
 root.render(
   <React.StrictMode>
     <HelmetProvider>
