@@ -93,7 +93,7 @@ export const ContactUs = (): JSX.Element => {
     scriptFormData.append("Time", time);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbw7yI9BX2RWGHr81LHN-6Hu28dSDXdRuliN23LLFSOMv6E-PtTAtxTlaE41CIQM2irS/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbw7yI9BX2RWGHr81LHN-6Hu28dSDXdRuliN23LLFSOMv6E-PtTAtxTlaE41CIQM2irS/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -146,7 +146,7 @@ export const ContactUs = (): JSX.Element => {
     {
       icon: <MapPinIcon className="h-4 w-4 text-white" />,
       title: "Address",
-      value: "606, Bldg No 6, Satara CHS, Opposite ATI, Sion Chunabhatti, Mumbai - 400022",
+      value: "Crown Taloja by Lodha, Taloja Bypass Phata, Antarli, Maharashtra 421204",
       href: null,
     },
   ];
@@ -300,7 +300,7 @@ export const ContactUs = (): JSX.Element => {
               {/* Map placeholder */}
               <div className="mt-8 w-full h-[260px] rounded-lg bg-gray-200 flex items-center justify-center">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.8060587178471!2d72.87906536383095!3d19.053082965939847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8b9987bd6af%3A0xf54753cc38673103!2sSatara%20CHSL!5e0!3m2!1sen!2sin!4v1756162012789!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.8099518006384!2d73.11627707544814!3d19.159794549336183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be79549395fcfb7%3A0x1c1e816956c35933!2sCrown%20Taloja%20by%20Lodha!5e0!3m2!1sen!2sin!4v1756342064674!5m2!1sen!2sin"
                   height="260"
                   width="100%"
                   style={{ border: 0 }}

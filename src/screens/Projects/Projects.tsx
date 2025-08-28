@@ -114,7 +114,7 @@ export const Projects = (): JSX.Element => {
                       : "text-[#4b4b4b] hover:text-[#1c1c1c] hover:bg-white"
                   }`}
                 >
-                  {tab.label} ({tab.count})
+                  {tab.label}
                 </button>
               ))}
             </div>

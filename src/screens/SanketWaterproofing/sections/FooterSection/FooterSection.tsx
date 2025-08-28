@@ -34,7 +34,7 @@ export const FooterSection = (): JSX.Element => {
 
   // Contact information
   const contactInfo = {
-    address: "606, Bldg No 6, Satara CHS, Opposite ATI, Sion Chunabhatti, Mumbai - 400022",
+    address: "Crown Taloja by Lodha, Taloja Bypass Phata, Antarli, Maharashtra 421204",
     phone: "+91 87794 96622",
     email: "contact@kewaterproofing.com",
   };
