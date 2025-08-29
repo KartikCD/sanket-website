@@ -7,7 +7,7 @@ export const FooterSection = (): JSX.Element => {
   const companyInfo = {
     name: "Keshav Enterprises",
     description:
-      "Professional waterproofing solutions for residential and commercial properties.",
+      "Professional waterproofing solutions for every concrete structures.",
   };
 
   const isHomePage = !window.location.pathname.includes("/projects");

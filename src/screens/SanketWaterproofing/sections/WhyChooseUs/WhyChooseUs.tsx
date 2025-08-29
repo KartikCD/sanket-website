@@ -29,10 +29,10 @@ export const WhyChooseUs = (): JSX.Element => {
     },
     {
       id: 4,
-      title: "Written Warranty",
+      title: "Notary Warranty",
       description:
-        "We provide a written warranty of 5, 7, or 10 years, giving you peace of mind and confidence in our services.",
-      iconUrl: <BookA size={18} color="#ffffff" aria-label="Written Warranty" />,
+        "We provide a notary warranty of 5, 7, or 10 years, giving you peace of mind and confidence in our services.",
+      iconUrl: <BookA size={18} color="#ffffff" aria-label="Notary Warranty" />,
     },
   ];
 
